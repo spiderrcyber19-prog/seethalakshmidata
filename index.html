@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seethalakshmi S — Senior Data Analyst</title>
+<style>
+:root {
+  --navy:   #0a1628;
+  --blue:   #1e3a5f;
+  --accent: #3b82f6;
+  --teal:   #06b6d4;
+  --gold:   #f59e0b;
+  --light:  #f0f6ff;
+  --white:  #ffffff;
+  --text:   #1e293b;
+  --muted:  #64748b;
+  --card:   #f8fafc;
+  --border: #e2e8f0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(10,22,40,0.97);backdrop-filter:blur(12px);z-index:100;padding:14px 0;border-bottom:1px solid rgba(59,130,246,0.2)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{color:#fff;font-weight:700;font-size:18px;letter-spacing:0.5px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,#0f2447 50%,#0a1628 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding-top:70px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(59,130,246,0.12) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{max-width:1100px;margin:0 auto;padding:0 24px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);border-radius:20px;padding:6px 14px;margin-bottom:20px}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e}
+.hero-badge span{color:rgba(255,255,255,0.8);font-size:12px;font-weight:500;letter-spacing:0.5px}
+.hero h1{font-size:52px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:8px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-role{font-size:16px;color:rgba(255,255,255,0.5);font-weight:400;margin-bottom:18px;letter-spacing:0.3px}
+.hero-desc{font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:28px;max-width:480px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.hero-tag{background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);color:rgba(255,255,255,0.8);padding:5px 12px;border-radius:4px;font-size:12px;font-weight:500}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;transition:all 0.2s}
+.btn-primary:hover{background:#2563eb;transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.85);padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:500;font-size:14px;transition:all 0.2s}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* STATS */
+.stats-panel{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.stat-item{text-align:center}
+.stat-num{font-size:36px;font-weight:800;color:var(--accent);line-height:1}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:6px;text-transform:uppercase;letter-spacing:0.5px}
+
+/* SECTIONS */
+section{padding:96px 0}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.section-tag{display:inline-block;background:rgba(59,130,246,0.08);color:var(--accent);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:3px;margin-bottom:12px;border-left:3px solid var(--accent)}
+.section-title{font-size:36px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.2}
+.section-sub{color:var(--muted);font-size:16px;margin-bottom:48px;max-width:560px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-text p{font-size:15px;color:#374151;line-height:1.8;margin-bottom:16px}
+.about-text strong{color:var(--navy)}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.comp-item{background:var(--light);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;color:var(--text);font-weight:500}
+.edu-card{background:var(--navy);color:#fff;border-radius:12px;padding:24px;margin-top:24px}
+.edu-deg{font-size:15px;font-weight:700;margin-bottom:4px}
+.edu-school{font-size:13px;color:rgba(255,255,255,0.65);margin-bottom:8px}
+.edu-cgpa{font-size:28px;font-weight:800;color:var(--accent)}
+
+/* EXPERIENCE */
+.exp-bg{background:var(--light)}
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--teal))}
+.exp-item{position:relative;margin-bottom:48px}
+.exp-item:last-child{margin-bottom:0}
+.exp-dot{position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--light);box-shadow:0 0 0 3px rgba(59,130,246,0.2)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;flex-wrap:wrap;gap:8px}
+.exp-role{font-size:18px;font-weight:700;color:var(--navy)}
+.exp-date{background:var(--accent);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;white-space:nowrap}
+.exp-company{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:8px}
+.exp-bullets li{font-size:14px;color:#374151;padding-left:16px;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:12px;top:2px}
+.exp-bullets strong{color:var(--navy)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.proj-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.3)}
+.proj-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.proj-visual{background:linear-gradient(135deg,var(--navy),#1e3a5f);padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px}
+.proj-icon-big{font-size:48px;margin-bottom:16px}
+.proj-year-badge{display:inline-block;background:rgba(59,130,246,0.25);color:var(--teal);font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;margin-bottom:8px;letter-spacing:0.5px}
+.proj-visual-title{color:#fff;font-size:22px;font-weight:800;line-height:1.2;margin-bottom:12px}
+.proj-visual-stack{display:flex;flex-wrap:wrap;gap:6px}
+.proj-stack-tag{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);font-size:10px;font-weight:600;padding:3px 8px;border-radius:3px}
+.proj-body{padding:32px}
+.proj-stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.proj-stat{background:var(--light);border-radius:8px;padding:12px;text-align:center}
+.proj-stat-num{font-size:20px;font-weight:800;color:var(--accent);line-height:1}
+.proj-stat-label{font-size:10px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.3px}
+.proj-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
+.proj-bullets li{font-size:13px;color:#374151;padding-left:14px;position:relative;line-height:1.5}
+.proj-bullets li::before{content:'◆';position:absolute;left:0;color:var(--accent);font-size:8px;top:4px}
+.proj-card-small .proj-top{padding:28px 28px 20px;border-bottom:1px solid var(--border)}
+.proj-card-small .proj-bottom{padding:20px 28px 28px}
+.proj-small-icon{font-size:32px;margin-bottom:12px}
+.proj-small-year{display:inline-block;background:rgba(59,130,246,0.08);color:var(--accent);font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;margin-bottom:8px}
+.proj-small-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.proj-small-stack{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0}
+.proj-small-tag{background:var(--light);color:var(--muted);font-size:10px;font-weight:600;padding:3px 7px;border-radius:3px}
+.proj-small-kpis{display:flex;flex-direction:column;gap:6px}
+.proj-kpi-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.proj-kpi-label{color:var(--muted)}
+.proj-kpi-val{font-weight:700;color:var(--navy)}
+
+/* SKILLS */
+.skills-bg{background:var(--navy)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;transition:all 0.3s}
+.skill-card:hover{background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.3)}
+.skill-icon{font-size:28px;margin-bottom:14px}
+.skill-name{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:12px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tag{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.65);font-size:11px;padding:3px 8px;border-radius:3px}
+.skills-bg .section-title{color:#fff}
+.skills-bg .section-sub{color:rgba(255,255,255,0.5)}
+.skills-bg .section-tag{background:rgba(59,130,246,0.2);color:var(--teal)}
+
+/* CERTS */
+.certs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.cert-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:all 0.2s}
+.cert-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.cert-icon{font-size:28px;margin-bottom:10px}
+.cert-name{font-size:12px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:4px}
+.cert-by{font-size:11px;color:var(--muted)}
+
+/* CONTACT */
+.contact-bg{background:linear-gradient(135deg,var(--navy),#0f2447)}
+.contact-inner{max-width:700px;margin:0 auto;text-align:center}
+.contact-bg .section-title{color:#fff;font-size:42px}
+.contact-bg .section-sub{color:rgba(255,255,255,0.6);margin:0 auto 40px}
+.contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.contact-link{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);padding:13px 22px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s}
+.contact-link:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#4ade80;font-size:13px;font-weight:600;padding:8px 18px;border-radius:20px;margin-bottom:28px}
+.open-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);padding:20px 0;text-align:center}
+footer p{color:rgba(255,255,255,0.35);font-size:12px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-inner,.about-grid,.projects-grid,.proj-card.featured{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .certs-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:36px}
+  .proj-card.featured{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Seetha<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Open to new opportunities</span>
+      </div>
+      <h1>Seethalakshmi<br><em>Srinivasa Basker</em></h1>
+      <div class="hero-role">Senior Data Analyst · Analytics Engineer · Hyderabad, India</div>
+      <p class="hero-desc">Turning complex datasets into executive decisions — 5+ years across Insurance & B2B SaaS on GCP, BigQuery, Snowflake & dbt. I build the pipelines, dashboards, and models that move the business.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Product Analytics</span>
+        <span class="hero-tag">BigQuery</span>
+        <span class="hero-tag">Snowflake · dbt</span>
+        <span class="hero-tag">BI Dashboards</span>
+        <span class="hero-tag">A/B Testing</span>
+        <span class="hero-tag">Python</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects ↓</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="stats-panel">
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20%</div>
+        <div class="stat-label">Conversion Uplift</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5M+</div>
+        <div class="stat-label">Records Analysed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Zero-Defect Releases</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Reporting Faster</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$273M</div>
+        <div class="stat-label">Revenue Modelled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <span class="section-tag">About</span>
+    <h2 class="section-title">Data Analyst. Analytics Engineer. Storyteller.</h2>
+    <p class="section-sub">I sit at the intersection of data engineering, statistical modelling, and business storytelling.</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a <strong>Senior Data Analyst and Analytics Engineer</strong> with 5+ years of experience building end-to-end analytics solutions for Insurance and global SaaS platforms. My work spans the full stack — from ingesting and transforming data in <strong>BigQuery, Snowflake, and dbt</strong>, to building the KPI dashboards and predictive models that C-level teams use to make decisions.</p>
+        <p>Currently at <strong>HTC Global Services</strong>, I lead insurance analytics on GCP BigQuery — delivering agency conversion improvements, data governance frameworks, and zero-defect ETL pipelines. Previously at <strong>RELX Group (Elsevier)</strong>, I built product analytics infrastructure for 1M+ global SaaS users.</p>
+        <p>Beyond my day job, I build <strong>sales analytics tools</strong> — my Zentech GTM dashboard models $273M in pipeline revenue and showcases how Python + Streamlit can replace static Excel reporting. I'm passionate about <strong>GenAI-powered analytics</strong> and self-serve data tools.</p>
+        <div class="comp-grid">
+          <div class="comp-item">Product Analytics</div>
+          <div class="comp-item">Data Warehousing</div>
+          <div class="comp-item">KPI Frameworks</div>
+          <div class="comp-item">ETL/ELT Pipelines</div>
+          <div class="comp-item">A/B Testing</div>
+          <div class="comp-item">Executive BI</div>
+          <div class="comp-item">Funnel Analysis</div>
+          <div class="comp-item">Root Cause Analysis</div>
+        </div>
+      </div>
+      <div>
+        <div class="edu-card">
+          <div class="edu-deg">B.Tech — Information Technology</div>
+          <div class="edu-school">Panimalar Engineering College · Chennai</div>
+          <div class="edu-cgpa">8.0 <span style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.5)">/10 CGPA</span></div>
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Key Coursework</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span style="background:rgba(59,130,246,0.2);color:rgba(255,255,255,0.7);font-size:11px;padding:3px 8px;border-radius:3px">DBMS</span>
+              <span style="background:rgba(59,130,246,0.2);color:rgba(255,255,255,0.7);font-size:11px;padding:3px 8px;border-radius:3px">Machine Learning</span>
+              <span style="background:rgba(59,130,246,0.2);color:rgba(255,255,255,0.7);font-size:11px;padding:3px 8px;border-radius:3px">Data Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="exp-bg">
+  <div class="container">
+    <span class="section-tag">Experience</span>
+    <h2 class="section-title">Work History</h2>
+    <p class="section-sub">5+ years building analytics solutions that drive measurable business outcomes.</p>
+    <div class="timeline">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Senior Engineer — Data Analyst</div>
+          <div class="exp-date">May 2025 – Present</div>
+        </div>
+        <div class="exp-company">HTC Global Services · Insurance Domain · Hyderabad, India</div>
+        <ul class="exp-bullets">
+          <li>Improved agency policy conversion rates by <strong>~20%</strong> — analysed 5M+ insurance transactions in BigQuery and built KPI dashboards in Looker Studio.</li>
+          <li>Designed <strong>scalable analytical data models</strong> and reusable enterprise datasets in SQL/BigQuery to power self-service BI and executive decision-making across business units.</li>
+          <li>Automated analytics workflows and ETL validation using <strong>Python, Pandas and GitLab</strong> — cut manual reporting effort by ~30% and supported zero-defect production releases.</li>
+          <li>Built behavioural classification model and <strong>risk stratification framework</strong> (High/Medium/Low) — Pareto root cause analysis identified top 3 eligibility decline reasons representing 60% of losses.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Data Analyst II</div>
+          <div class="exp-date">Sep 2024 – Apr 2025</div>
+        </div>
+        <div class="exp-company">RELX Group (Elsevier) · Global SaaS · Remote, India</div>
+        <ul class="exp-bullets">
+          <li>Built <strong>product analytics pipelines</strong> in Snowflake and dbt for 1M+ global SaaS users — enabling customer health scoring, churn analysis and engagement tracking.</li>
+          <li>Analysed <strong>A/B tests</strong> using CTR, statistical significance and confidence intervals to guide product rollout decisions and feature prioritisation.</li>
+          <li>Developed Looker Studio <strong>cohort retention dashboards</strong> and automated Snowflake data-quality checks — cutting ad-hoc requests by ~30%.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-role">Data Analyst</div>
+          <div class="exp-date">Nov 2020 – Sep 2024</div>
+        </div>
+        <div class="exp-company">HCL Technologies · Product & QA Analytics · India</div>
+        <ul class="exp-bullets">
+          <li>Maintained <strong>zero data-integrity issues for 4+ years</strong> — SQL validation, ETL regression testing and data-lineage verification across BigQuery and GCP.</li>
+          <li>Standardised <strong>KPI dashboards across 5+ business units</strong> and automated Python-based validation workflows, cutting manual reporting effort by ~20%.</li>
+          <li>Mentored junior analysts and led <strong>cross-functional analytics initiatives</strong> from requirements to production.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <span class="section-tag">Projects</span>
+    <h2 class="section-title">Selected Analytics Projects</h2>
+    <p class="section-sub">End-to-end solutions — from data pipeline to executive dashboard.</p>
+    <div class="projects-grid">
+
+      <!-- FEATURED: ZENTECH -->
+      <div class="proj-card featured">
+        <div class="proj-visual" style="background:linear-gradient(135deg,#0f2447,#1e3a5f)">
+          <div>
+            <div class="proj-icon-big">💰</div>
+            <div class="proj-year-badge">2026 · Personal Project</div>
+            <div class="proj-visual-title">Zentech Sales Analytics & GTM Performance Dashboard</div>
+          </div>
+          <div class="proj-visual-stack">
+            <span class="proj-stack-tag">Python</span>
+            <span class="proj-stack-tag">Pandas</span>
+            <span class="proj-stack-tag">Streamlit</span>
+            <span class="proj-stack-tag">Plotly</span>
+            <span class="proj-stack-tag">Excel</span>
+            <span class="proj-stack-tag">GTM Analytics</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-stats-row">
+            <div class="proj-stat"><div class="proj-stat-num">$273M</div><div class="proj-stat-label">Closed-Won Revenue</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">69.6%</div><div class="proj-stat-label">Win Rate</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">$1.75M</div><div class="proj-stat-label">Avg Deal Size</div></div>
+            <div class="proj-stat"><div class="proj-stat-num">87.3%</div><div class="proj-stat-label">Quota Attainment</div></div>
+          </div>
+          <ul class="proj-bullets">
+            <li>Built an <strong>interactive GTM sales analytics dashboard</strong> analysing revenue, pipeline, conversion, quota attainment, renewal performance across regions, products, segments, and rep levels.</li>
+            <li>Developed a <strong>reusable Python/Pandas transformation layer</strong> for data ingestion, cleaning, validation, merging, filtering, KPI calculation, and chart-ready preparation across Deals, Reps, and Targets datasets.</li>
+            <li>Engineered <strong>FY2024 KPIs</strong>: $273M Closed-Won revenue, 156 deals won, 69.6% win rate, $1.75M average deal size, 87.3% quota attainment, and 34.6% renewal rate.</li>
+            <li>Added <strong>interactive drill-down views and dynamic Executive Takeaways</strong> — translated sales data into actionable insights across regions, products, pipeline stages, and representatives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: INSURANCE -->
+      <div class="proj-card proj-card-small">
+        <div class="proj-top">
+          <div class="proj-small-icon">📊</div>
+          <div class="proj-small-year">2025 · Enterprise Analytics</div>
+          <div class="proj-small-title">Enterprise Business Analytics Platform — Quote Retention & Competitive Loss</div>
+          <div class="proj-small-stack">
+            <span class="proj-small-tag">BigQuery</span>
+            <span class="proj-small-tag">GCP</span>
+            <span class="proj-small-tag">Advanced SQL</span>
+            <span class="proj-small-tag">Looker Studio</span>
+            <span class="proj-small-tag">Dimensional Modelling</span>
+          </div>
+        </div>
+        <div class="proj-bottom">
+          <div class="proj-small-kpis">
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Applications Analysed</span><span class="proj-kpi-val">50,000+</span></div>
+            <div class="proj-kpi-row"><span class="proj-kpi-label">KPI Metrics Built</span><span class="proj-kpi-val">20+</span></div>
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Agencies Benchmarked</span><span class="proj-kpi-val">100+</span></div>
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Reporting Accuracy</span><span class="proj-kpi-val">99%+</span></div>
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Losses from Top 3 Causes</span><span class="proj-kpi-val">60%</span></div>
+          </div>
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);line-height:1.6">
+            Designed scalable dimensional models in BigQuery · Developed 20+ KPIs across funnel, retention & segmentation · Pareto root cause analysis · Interactive Looker Studio dashboards with 8-dimension filtering · 99%+ data quality with automated governance.
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: ELSEVIER -->
+      <div class="proj-card proj-card-small">
+        <div class="proj-top">
+          <div class="proj-small-icon">🔬</div>
+          <div class="proj-small-year">2024 · Product Analytics</div>
+          <div class="proj-small-title">RELX Elsevier — Product Analytics Pipeline & SaaS Retention Analytics</div>
+          <div class="proj-small-stack">
+            <span class="proj-small-tag">Snowflake</span>
+            <span class="proj-small-tag">dbt</span>
+            <span class="proj-small-tag">AWS S3</span>
+            <span class="proj-small-tag">Looker Studio</span>
+            <span class="proj-small-tag">A/B Testing</span>
+          </div>
+        </div>
+        <div class="proj-bottom">
+          <div class="proj-small-kpis">
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Users in Pipeline</span><span class="proj-kpi-val">1M+</span></div>
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Ad-hoc Requests Reduced</span><span class="proj-kpi-val">30%</span></div>
+            <div class="proj-kpi-row"><span class="proj-kpi-label">Product Decisions Influenced</span><span class="proj-kpi-val">3 in 7 months</span></div>
+          </div>
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);line-height:1.6">
+            End-to-end Snowflake → dbt → AWS S3 pipeline · Customer health scoring & churn prediction · A/B test analysis (CTR, significance testing) · Cohort retention dashboards · Automated data quality framework.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="container">
+    <span class="section-tag">Skills</span>
+    <h2 class="section-title">Technical Stack</h2>
+    <p class="section-sub">Full-stack analytics — from raw data to executive insight.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">SQL & Databases</div>
+        <div class="skill-tags">
+          <span class="skill-tag">BigQuery</span><span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">AWS Athena</span><span class="skill-tag">CTEs</span>
+          <span class="skill-tag">Window Functions</span><span class="skill-tag">Query Optimisation</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">Cloud Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">GCP</span><span class="skill-tag">BigQuery</span>
+          <span class="skill-tag">AWS S3</span><span class="skill-tag">Databricks</span>
+          <span class="skill-tag">Snowflake</span><span class="skill-tag">Data Lake</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Streamlit</span><span class="skill-tag">Plotly</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">BI & Visualisation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Looker Studio</span><span class="skill-tag">Databricks AI/BI</span>
+          <span class="skill-tag">KPI Dashboards</span><span class="skill-tag">Self-Serve BI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Data Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag">dbt</span><span class="skill-tag">ETL/ELT</span>
+          <span class="skill-tag">Data Modelling</span><span class="skill-tag">Data Lineage</span>
+          <span class="skill-tag">Schema Validation</span><span class="skill-tag">DataOps</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🧪</div>
+        <div class="skill-name">Analytics Methods</div>
+        <div class="skill-tags">
+          <span class="skill-tag">A/B Testing</span><span class="skill-tag">Cohort Analysis</span>
+          <span class="skill-tag">Funnel Analysis</span><span class="skill-tag">Segmentation</span>
+          <span class="skill-tag">Root Cause Analysis</span><span class="skill-tag">Forecasting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section>
+  <div class="container">
+    <span class="section-tag">Certifications</span>
+    <h2 class="section-title">Credentials</h2>
+    <p class="section-sub">Verified certifications across cloud, data, and AI platforms.</p>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-icon">☁️</div><div class="cert-name">Big Data & ML Fundamentals</div><div class="cert-by">Google Cloud</div></div>
+      <div class="cert-card"><div class="cert-icon">📈</div><div class="cert-name">Smart Analytics, ML & AI on GCP</div><div class="cert-by">Google Cloud</div></div>
+      <div class="cert-card"><div class="cert-icon">❄️</div><div class="cert-name">Snowflake Data Warehousing</div><div class="cert-by">Snowflake</div></div>
+      <div class="cert-card"><div class="cert-icon">🏆</div><div class="cert-name">SQL Advanced</div><div class="cert-by">HackerRank</div></div>
+      <div class="cert-card"><div class="cert-icon">🤖</div><div class="cert-name">AI/BI Dashboard Fundamentals</div><div class="cert-by">Databricks</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="open-badge"><div class="open-dot"></div>Open to new opportunities</div>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-sub">Open to Senior Data Analyst, Analytics Engineer, and Product Analytics roles at product-based and large-scale technology companies.</p>
+      <div class="contact-links">
+        <a href="mailto:seethalakshmidata@gmail.com" class="contact-link">✉ seethalakshmidata@gmail.com</a>
+        <a href="https://linkedin.com/in/seethalakshmi-s-data-analyst" class="contact-link" target="_blank">🔗 LinkedIn</a>
+        <a href="tel:+917331146461" class="contact-link">📞 +91-7331146461</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Seethalakshmi Srinivasa Basker · Senior Data Analyst · Hyderabad, India</p>
+</footer>
+
+</body>
+</html>
